@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- Copyright © 2015 Infrared5, Inc. All rights reserved.
+
+The accompanying code comprising examples for use solely in conjunction with Red5 Pro (the "Example Code") 
+is  licensed  to  you  by  Infrared5  Inc.  in  consideration  of  your  agreement  to  the  following  
+license terms  and  conditions.  Access,  use,  modification,  or  redistribution  of  the  accompanying  
+code  constitutes your acceptance of the following license terms and conditions.
+
+Permission is hereby granted, free of charge, to you to use the Example Code and associated documentation 
+files (collectively, the "Software") without restriction, including without limitation the rights to use, 
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit 
+persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The Software shall be used solely in conjunction with Red5 Pro. Red5 Pro is licensed under a separate end 
+user  license  agreement  (the  "EULA"),  which  must  be  executed  with  Infrared5,  Inc.   
+An  example  of  the EULA can be found on our website at: https://account.red5pro.com/assets/LICENSE.txt.
+
+The above copyright notice and this license shall be included in all copies or portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,  INCLUDING  BUT  
+NOT  LIMITED  TO  THE  WARRANTIES  OF  MERCHANTABILITY, FITNESS  FOR  A  PARTICULAR  PURPOSE  AND  
+NONINFRINGEMENT.   IN  NO  EVENT  SHALL INFRARED5, INC. BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+WHETHER IN  AN  ACTION  OF  CONTRACT,  TORT  OR  OTHERWISE,  ARISING  FROM,  OUT  OF  OR  IN CONNECTION 
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+<html>
+  <head>
+    <title>Conference Test</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <script src="//webrtchacks.github.io/adapter/adapter-latest.js"></script>
+    <script src="../../lib/screenfull/screenfull.min.js"></script>
+    <script src="../../script/testbed-config.js"></script>
+    <script src="../../script/red5pro-utils.js"></script>
+    <script src="../../script/reachability.js"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/testbed.css">
+    <link rel="stylesheet" href="../../lib/red5pro/red5pro-media.css">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100i%2C200i%2C300i%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i&#038;subset=latin&#038;ver=5.2.3' type='text/css' media='all' />
+    
+  </head>
+  <body>
+    <div class="proto">
+      <div class="float-left-conf" id="FILLNAME">
+        <h2 class="centered"><em>Subscriber Stream</em>: FILLNAME</h2>
+        <p id="FILLNAME-status" class="centered status-field">On hold.</p>
+        <div class="centered">
+          <video id="FILLNAME-video"
+                  controls autoplay playsinline
+                  class="red5pro-media red5pro-media-background"
+                  width="480" height="360"></video>
+        </div>
+      </div>
+    </div>
+    <div id="app">
+      <p class="version-field">Testbed Version: 6.2.0</p>
+      <div id="back-link-container" style="text-align: left;">
+        <p class="back-link"><a href="../../index.html">&lt; Settings</a></p>
+        <p class="version-field">Testbed Version: 6.2.0</p>
+      </div>
+      <div class="ice-background">
+      <h1>WARNING: DEPRECATED TEST</h1>
+      <hr />
+      <div class="test-notification">
+        <p>The Conference example requires access to a service that returns a stream listing. You may run into Cross-Origin Resource Sharing (<strong>CORS</strong>) issues if trying to use this example without the proper <strong>CORS</strong> settings provided by the server.</p>
+        <br/>
+        <p>It is recommended to view this example as part of the <code>webrtcexamples</code> webapp shipped with the <a href="https://account.red5pro.com/download" target="_blank">Red5 Pro Server</a>.</p>
+      </div>
+      </div>
+      <div class="test-info">
+        <h1 class="centered test-title red-text">Conference Test</h1>
+        <p id="stream-title" class="centered test-info_stream-title">STREAM UNKOWN</p>
+      </div>
+      <hr />
+      <div>
+        <label for="roomTxt">Room - </label><input type="text" id="roomTxt">
+        <label for="nameTxt">Name - </label><input type="text" id="nameTxt">
+        <label for="videoCheck">Video - </label><input type="checkbox" id="videoCheck" checked>
+        <label for="audioCheck">Audio - </label><input type="checkbox" id="audioCheck" checked>
+        <input type="submit" value="Connect" id="submitBtn">
+      </div>
+      <div class="float-left-conf publisher">
+        <h2 class="centered"><em>Publisher Stream</em>: <span id="pub-stream-title"></span></h2>
+        <p id="pub-status-field" class="centered status-field">On hold.</p>
+        <div class="centered">
+          <video id="red5pro-publisher-video"
+                controls autoplay muted playsinline
+                width="480" height="360"></video>
+        </div>
+      </div>
+    </div>
+    <script src="../../lib/es6/es6-promise.min.js"></script>
+    <script src="../../lib/es6/es6-bind.js"></script>
+    <script src="../../lib/es6/es6-array.js"></script>
+    <script src="../../lib/es6/es6-object-assign.js"></script>
+    <script src="../../lib/es6/es6-fetch.js"></script>
+    <script src="../../lib/red5pro/red5pro-sdk.min.js"></script>
+    <script>
+      (function(window) {
+        var configuration = (function () {
+          var conf = sessionStorage.getItem('r5proTestBed');
+          try {
+            return JSON.parse(conf);
+          }
+          catch (e) {
+            console.error('Could not read testbed configuration from sessionstorage: ' + e.message);
+          }
+          return {}
+        })();
+    
+        if (configuration.verboseLogging) {
+          window.publisherLog = function (message) {
+            console.log('[Red5ProRTMPPublisher:SWF] - ' + message);
+          };
+          window.subscriberLog = function (message) {
+            console.log('[Red5ProRTMPSubscriber:SWF] - ' + message);
+          };
+        }
+    
+        if (configuration.authentication.enabled) {
+          var node = document.createElement('div');
+          node.classList.add('hint-block', 'auth-alert');
+          var note = document.createElement('span');
+          note.classList.add('strong');
+          note.innerHTML = '*Authentication is Enabled*';
+          var link = document.createElement('a');
+          link.innerText = 'Click here to disable.';
+          link.href= '../../index.html';
+          link.classList.add('auth-link');
+          node.appendChild(note);
+          node.appendChild(link);
+          var testBody = document.getElementById('back-link-container').nextElementSibling;
+          testBody.parentNode.insertBefore(node, testBody);
+        }
+    
+      })(this);
+    </script>
+    <script src="../../script/publisher-status.js"></script>
+    <script src="../../script/subscription-status.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

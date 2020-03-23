@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="hlsConfig" class="com.red5pro.stream.transform.mpegts.HLSConfig" >
+		<!-- Number of items in the HLS playlist -->
+	 	<property name="itemCount" value="5"/>	 	
+	 	<!-- The segment duration in seconds for each item.  -->
+	 	<property name="itemLength" value="6"/>
+	 	<!-- The segment duration variance. The range should be higher than 0.5 and lower than 1.0.
+	 	That is to configure segments generated more than half of the desired duration. 
+	 	The effectiveness of segmentation is dependant on the keyframe interval -->
+	 	<property name="itemThreshold" value="0.7"/>
+		<!--  -->
+	 	<property name="useDiskWrites" value="true"/>
+		<!-- Post processing mode: 
+		      0 = Legacy, no append, no ffmpeg requirement (default)
+		      1 = Uses the Orientation Post Processor requiring ffmpeg and also enables "append" handling
+		-->
+	 	<property name="postProcessMode" value="0"/>
+        <!-- Provide post-processing for recorded HLS files -->
+        <property name="writerPostProcessors">
+            <set>
+                <!-- Creates a VOD playlist with associated segments and moves it to vod app or cloud storage upload 
+                     To use non-append mode, set `legacy` to `true`
+                -->
+                <value>com.red5pro.stream.transform.mpegts.processor.VODFilePostProcessor</value>
+                <!-- Cleans up the .ts and .m3u8 files if they were written -->
+                <value>com.red5pro.stream.transform.mpegts.processor.SegmentCleanupPostProcessor</value>
+            </set>
+        </property>
+        <!-- Debug mode -->
+        <property name="debug" value="false"/>
+        <!-- Force VOD recording -->
+        <property name="forceVODRecord" value="false"/>
+        <!-- Cloud uploaders are queried in the post processor, no special configuration entry required here -->
+    </bean>
+     
+</beans>

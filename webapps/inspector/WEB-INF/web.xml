@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0" 
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+         
+    <display-name>inspector</display-name>       
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>/inspector</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>streamerjs</servlet-name>
+        <servlet-class>com.data.stream.Streamer</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>streamerjs</servlet-name>
+        <url-pattern>/streamapi.js</url-pattern>
+    </servlet-mapping>   
+    
+        <servlet>
+        <servlet-name>inspect</servlet-name>
+        <servlet-class>com.data.stream.Inspect</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>inspect</servlet-name>
+        <url-pattern>/api</url-pattern>
+    </servlet-mapping>   
+    
+</web-app>

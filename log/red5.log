@@ -1,0 +1,114 @@
+2020-03-23 09:25:26,787 [main] INFO  org.red5.server.Launcher - Red5 Server 1.1.0 (https://github.com/Red5)
+2020-03-23 09:25:27,366 [main] INFO  c.r.s.stream.Red5ProConnManager - Diagnostics is not active
+2020-03-23 09:25:27,459 [main] INFO  org.red5.server.ContextLoader - ContextLoader init
+2020-03-23 09:25:27,460 [main] INFO  org.red5.server.ContextLoader - Loading: default.context = ${red5.root}/webapps/red5-default.xml => /home/andreandrade/Downloads/red5pro/webapps/red5-default.xml
+2020-03-23 09:25:27,528 [main] INFO  com.red5pro.license.LicenseManager - LICENSE.KEY: 90EB-KCQ0-F6GQ-2761
+2020-03-23 09:25:27,529 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.restreamer.plugin.RestreamerPlugin
+2020-03-23 09:25:27,530 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.stream.transform.mpegts.MPEGTransformPlugin
+2020-03-23 09:25:27,533 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.clustering.autoscale.AutoScale
+2020-03-23 09:25:27,535 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.rtsp.plugin.RTSPPlugin
+2020-03-23 09:25:27,536 [main] INFO  c.red5pro.activation.ProPluginator - Version - server: RED5/1,1,0,0 pro: 6.2.0.b406-release
+2020-03-23 09:25:27,537 [main] INFO  c.red5pro.activation.ProPluginator - Operating system: Linux version: 4.15.0-91-generic
+2020-03-23 09:25:27,537 [main] INFO  c.red5pro.activation.ProPluginator - Processor arch: amd64 available: 8
+2020-03-23 09:25:27,537 [main] INFO  c.red5pro.activation.ProPluginator - Memory - free: 243251496 total: 259522560 max: 2077753344
+2020-03-23 09:25:27,537 [main] INFO  c.red5pro.activation.ProPluginator - Starting Red5 Professional, pluginator version 6.2.0.406-RELEASE - 1b5c27c (on: 03.06.2020 20:00)
+2020-03-23 09:25:27,572 [main] INFO  c.r.o.i.ProvisionResolverService - setting MBR spliterator ~
+2020-03-23 09:25:27,572 [main] INFO  c.r.o.i.ProvisionResolverService - inspecting prewire
+2020-03-23 09:25:27,581 [main] INFO  c.red5pro.activation.ProPluginator - Red5 Professional Activating
+2020-03-23 09:25:27,582 [main] INFO  com.red5pro.license.LicenseManager - Activation configured
+2020-03-23 09:25:27,586 [main] INFO  c.red5pro.activation.ProPluginator - Plugination activation waiting for server to settle...
+2020-03-23 09:25:27,587 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.activation.ProPluginator
+2020-03-23 09:25:27,606 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.data.stream.InspectorPlugin
+2020-03-23 09:25:27,625 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.server.plugin.simpleauth.SimpleAuthPlugin
+2020-03-23 09:25:27,626 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.webrtc.plugin.WebRTCPlugin
+2020-03-23 09:25:27,634 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.media.storage.CloudstoragePlugin
+2020-03-23 09:25:27,637 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: org.red5.net.websocket.WebSocketPlugin
+2020-03-23 09:25:27,642 [main] INFO  o.red5.server.plugin.PluginLauncher - Loaded plugin: com.red5pro.cluster.plugin.ClusterPlugin
+2020-03-23 09:25:28,554 [0.0.0.0-startStop-1] INFO  ROOT - Starting up context: streammanager
+2020-03-23 09:25:29,008 [0.0.0.0-startStop-1] WARN  c.r.s.s.database.jdbc.sql.SQLTest - Skipping database check since connection details have not been provided correctly
+2020-03-23 09:25:29,510 [0.0.0.0-startStop-1] WARN  c.r.s.s.r.s.RestTokenAuthenticator - No administrator authentication token set in configuration. All authentication requests will be denied by default
+2020-03-23 09:25:30,079 [0.0.0.0-startStop-1] WARN  c.r.s.a.a.AuthenticationProvider - accessToken value cannot be empty. Please specify a valid 'accessToken' value.
+2020-03-23 09:25:30,144 [Loader:] INFO  org.red5.server.scope.Scope - Scope null name reset to:  disallowed
+2020-03-23 09:25:30,147 [Loader:] INFO  org.red5.server.Server - Add mapping global: default host:  context: null
+2020-03-23 09:25:30,148 [Loader:] INFO  org.red5.server.scope.Scope - Invalid scope name, null is not allowed
+2020-03-23 09:25:30,149 [Loader:] WARN  org.red5.server.scope.Scope - Invalid scope rejected: Scope [name=null, path=/default, type=APPLICATION, autoStart=true, creationTime=1584966330133, depth=1, enabled=true, running=false]
+2020-03-23 09:25:30,149 [Loader:] WARN  org.red5.server.scope.Scope - Scope not added to parent
+2020-03-23 09:25:30,178 [Loader:/template] INFO  org.red5.server.Server - Add mapping global: default host:  context: template
+2020-03-23 09:25:30,199 [Loader:/live] INFO  org.red5.server.Server - Add mapping global: default host:  context: live
+2020-03-23 09:25:30,239 [Loader:/streammanager] INFO  org.red5.server.Server - Add mapping global: default host:  context: streammanager
+2020-03-23 09:25:30,251 [Loader:/streammanager] WARN  c.r.s.s.r.s.RestTokenAuthenticator - No administrator authentication token set in configuration. All authentication requests will be denied by default
+2020-03-23 09:25:30,262 [Loader:/bandwidthdetection] INFO  org.red5.server.Server - Add mapping global: default host:  context: bandwidth-detection
+2020-03-23 09:25:30,314 [Loader:/api] WARN  c.r.s.a.a.AuthenticationProvider - accessToken value cannot be empty. Please specify a valid 'accessToken' value.
+2020-03-23 09:25:30,322 [Loader:/api] INFO  org.red5.server.Server - Add mapping global: default host:  context: api
+2020-03-23 09:25:34,342 [pool-13-thread-1] INFO  com.red5pro.license.LicenseManager - License check completed successfully
+2020-03-23 09:25:34,347 [pool-13-thread-1] INFO  com.red5pro.license.LicenseManager - A valid license has been found. [trial / 10 connection limit]
+2020-03-23 09:25:34,347 [pool-13-thread-1] INFO  c.red5pro.activation.ProPluginator - Successfully validated plugin license
+2020-03-23 09:25:34,347 [pool-13-thread-1] INFO  c.red5pro.activation.ProPluginator - Starting caludron
+2020-03-23 09:25:34,376 [pool-13-thread-1] INFO  c.r.o.cauldron.CauldronFireStarter - Loading Cauldron
+2020-03-23 09:25:34,647 [pool-29-thread-1] INFO  c.r.override.cauldron.ProcessLoader - processor linked com.red5pro.media.transform.codec.AVCProcessor
+2020-03-23 09:25:34,648 [pool-29-thread-1] INFO  c.r.o.cauldron.CauldronFireStarter - Notify MediaProcessorAware handlers
+2020-03-23 09:25:34,663 [pool-13-thread-2] INFO  com.red5pro.plugin.Red5ProPlugin - Setting qos scope listener
+2020-03-23 09:25:34,663 [pool-13-thread-2] INFO  com.red5pro.plugin.Red5ProPlugin - Got global scope: default
+2020-03-23 09:25:34,664 [pool-13-thread-2] INFO  com.red5pro.plugin.Red5ProPlugin - Maximum shared object message size: 65535
+2020-03-23 09:25:34,671 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Starting RTSP plugin version 6.2.0.406-RELEASE - 1b5c27c (on: 03.06.2020 20:00)
+2020-03-23 09:25:34,671 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Setting recording to enabled, true
+2020-03-23 09:25:34,672 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - RTSP plugin port 8554 recording enabled: true
+2020-03-23 09:25:34,674 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Scope name template
+2020-03-23 09:25:34,674 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Scope name api
+2020-03-23 09:25:34,674 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Scope name bandwidth-detection
+2020-03-23 09:25:34,674 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Scope name live
+2020-03-23 09:25:34,674 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Scope name streammanager
+2020-03-23 09:25:34,698 [pool-13-thread-2] INFO  com.red5pro.rtsp.plugin.RTSPPlugin - Mina settings: ioThreads 8, backlog 32,  tcpNoDelay true,  sendBufferSize 65536, receiveBufferSize 65536
+2020-03-23 09:25:34,699 [pool-13-thread-1] INFO  c.r.r.plugin.RestreamerPlugin - Set valid license: true
+2020-03-23 09:25:34,699 [pool-13-thread-2] INFO  c.r.r.plugin.RestreamerPlugin - Starting Restreamer plugin version 6.2.0.406-RELEASE - 1b5c27c (on: 03.06.2020 20:00)
+2020-03-23 09:25:34,714 [pool-13-thread-2] INFO  c.r.r.ipcam.plugin.IPCamPlugin - Starting IPCam plugin version 6.2.0.406-RELEASE - 1b5c27c (on: 03.06.2020 20:00)
+2020-03-23 09:25:34,716 [pool-13-thread-2] INFO  c.r.r.ipcam.plugin.IPCamPlugin - Got global scope: default
+2020-03-23 09:25:34,717 [pool-13-thread-2] INFO  c.r.mpegts.plugin.TSIngestPlugin - Starting TS-Ingest plugin version 6.2.0.406-RELEASE - 1b5c27c (on: 03.06.2020 20:00)
+2020-03-23 09:25:34,718 [pool-13-thread-2] INFO  c.r.mpegts.plugin.TSIngestPlugin - Got global scope: default
+2020-03-23 09:25:34,718 [pool-13-thread-2] INFO  c.r.mpegts.plugin.TSIngestPlugin - Setting server scope listener
+2020-03-23 09:25:34,719 [pool-13-thread-2] INFO  c.r.mpegts.plugin.TSIngestPlugin - TS keep-alive disabled
+2020-03-23 09:25:34,719 [pool-13-thread-2] INFO  c.r.r.plugin.RestreamerPlugin - Start completed; using global scope: Scope [name=default, path=, type=GLOBAL, autoStart=true, creationTime=1584966327483, depth=0, enabled=true, running=true]
+2020-03-23 09:25:34,720 [pool-13-thread-2] INFO  c.red5pro.activation.ProPluginator - Red5Pro-AutoScale not loading for license type: trial
+2020-03-23 09:25:34,721 [pool-13-thread-2] INFO  c.red5pro.activation.ProPluginator - Red5Pro-Clustering not loading for license type: trial
+2020-03-23 09:25:34,723 [pool-13-thread-1] INFO  c.r.webrtc.plugin.WebRTCPlugin - Set valid license: true
+2020-03-23 09:25:34,724 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Starting WebRTC plugin version 6.2.0.406-RELEASE - 1b5c27c (on: 03.06.2020 20:00)
+2020-03-23 09:25:34,736 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Stream statistics enabled
+2020-03-23 09:25:34,745 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - MTU: 1180 ABR threshold: 0.25
+2020-03-23 09:25:34,746 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - RTP ingest grouped: false priority: 6 publisher sleep: 5 subscriber sleep: 150
+2020-03-23 09:25:34,746 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Subscriber - Favor lipsync: false
+2020-03-23 09:25:34,746 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Available video codecs: [H264_PMODE1]
+2020-03-23 09:25:34,746 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Configured DTLS ciphers: [TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
+2020-03-23 09:25:34,757 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - DTLS cipher values: [49199, 49191, 49171, 156, 60, 47, 49172, 57, 56, 53]
+2020-03-23 09:25:34,758 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Port range: 49152-65535
+2020-03-23 09:25:34,793 [pool-13-thread-2] INFO  c.r.server.util.NetworkManager - Local address: 192.168.15.145
+2020-03-23 09:25:35,333 [pool-13-thread-2] WARN  org.ice4j.socket.IceSocketWrapper - Destination address: 74.125.200.127:19302/udp not reachable from: 192.168.15.145:36648/udp
+2020-03-23 09:25:35,724 [pool-13-thread-1] INFO  c.red5pro.activation.ProPluginator - Entering ready-state
+2020-03-23 09:25:35,936 [StunClientTransaction-pool-42-thread-1] WARN  org.ice4j.socket.IceSocketWrapper - Destination address: 74.125.200.127:19302/udp not reachable from: 192.168.15.145:36648/udp
+2020-03-23 09:25:36,637 [StunClientTransaction-pool-42-thread-1] WARN  org.ice4j.socket.IceSocketWrapper - Destination address: 74.125.200.127:19302/udp not reachable from: 192.168.15.145:36648/udp
+2020-03-23 09:25:37,539 [StunClientTransaction-pool-42-thread-1] WARN  org.ice4j.socket.IceSocketWrapper - Destination address: 74.125.200.127:19302/udp not reachable from: 192.168.15.145:36648/udp
+2020-03-23 09:25:38,338 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Public IP: null
+2020-03-23 09:25:38,815 [pool-13-thread-2] INFO  c.r.server.util.NetworkManager - Public address: 177.158.227.101
+2020-03-23 09:25:39,508 [pool-13-thread-2] INFO  c.r.j.c.a.opus.CauldronOpusDecoder - Opus decoder
+in: opus/rtp, 48000.0 Hz, 16-bit
+out: LINEAR, 48000.0 Hz, 16-bit, Mono, LittleEndian, Signed
+2020-03-23 09:25:39,509 [pool-13-thread-2] INFO  c.r.j.c.a.opus.CauldronOpusEncoder - Opus encoder
+in: LINEAR, 48000.0 Hz, 16-bit, Stereo, LittleEndian, Signed
+out: opus/rtp, 48000.0 Hz, 16-bit, Stereo
+2020-03-23 09:25:39,532 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Setting server scope listener
+2020-03-23 09:25:39,533 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Got global scope: default
+2020-03-23 09:25:39,548 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Codec preflight check
+2020-03-23 09:25:39,549 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - avcenc 139848498412512
+2020-03-23 09:25:39,550 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Decoder check completed: com.red5pro.webrtc.codec.AVCifCauldron
+2020-03-23 09:25:39,551 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Decoder check completed: com.red5pro.webrtc.codec.AACifCauldron
+2020-03-23 09:25:39,551 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Decoder check completed: com.red5pro.webrtc.codec.MP3ifCauldron
+2020-03-23 09:25:39,552 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Encoder check completed: com.red5pro.jmfext.codec.video.h264.CauldronH264Encoder
+2020-03-23 09:25:39,553 [pool-13-thread-2] INFO  c.r.j.c.a.opus.CauldronOpusEncoder - Settings - bandwidth: auto bitrate: 64000 DTX: false FEC: false
+2020-03-23 09:25:39,553 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Encoder check completed: com.red5pro.jmfext.codec.audio.opus.CauldronOpusEncoder
+2020-03-23 09:25:39,553 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Decoder check completed: com.red5pro.jmfext.codec.audio.opus.CauldronOpusDecoder
+2020-03-23 09:25:39,553 [pool-13-thread-2] INFO  c.r.webrtc.plugin.WebRTCPlugin - Codec preflight check completed
+2020-03-23 09:25:39,555 [pool-13-thread-2] INFO  com.red5pro.crypto.CryptoLoader - Storing library path for forced loading: /home/andreandrade/Downloads/red5pro/lib/amd64-Linux-gpp/jni/libred5pro-crypto-5.2.4.so
+2020-03-23 09:25:39,557 [pool-13-thread-2] INFO  com.red5pro.crypto.CryptoLoader - Library loaded: /home/andreandrade/Downloads/red5pro/lib/amd64-Linux-gpp/jni/libred5pro-crypto-5.2.4.so
+2020-03-23 09:25:57,415 [Connection Checker] INFO  c.r.s.stream.Red5ProConnManager - Pro connections; Total count: 0, WebRTC ports allocated: 0, edge-proxy: 0, re-streamers: 0, sm-pulses:0
+2020-03-23 09:26:27,413 [Connection Checker] INFO  c.r.s.stream.Red5ProConnManager - Pro connections; Total count: 0, WebRTC ports allocated: 0, edge-proxy: 0, re-streamers: 0, sm-pulses:0
+2020-03-23 09:26:57,413 [Connection Checker] INFO  c.r.s.stream.Red5ProConnManager - Pro connections; Total count: 0, WebRTC ports allocated: 0, edge-proxy: 0, re-streamers: 0, sm-pulses:0
+2020-03-23 09:27:27,413 [Connection Checker] INFO  c.r.s.stream.Red5ProConnManager - Pro connections; Total count: 0, WebRTC ports allocated: 0, edge-proxy: 0, re-streamers: 0, sm-pulses:0
